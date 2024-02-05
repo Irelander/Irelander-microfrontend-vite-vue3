@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:host" : "vue-tsc && vite build --watch & vite preview --strictPort",
+    "dev:host": "vue-tsc && vite build --watch & vite preview --strictPort",
     "build": "vue-tsc && vite build",
     "preview": "vite preview --strictPort"
   },
   "dependencies": {
+    "irelander-ui-components": "workspace:^",
     "pinia": "^2.1.7",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"

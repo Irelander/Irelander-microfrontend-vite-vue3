@@ -1,18 +1,19 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { storeToRefs } from 'pinia'
-import { useCartStore } from '../../stores'
+  import { computed } from 'vue';
+  import { storeToRefs } from 'pinia'
+  import { useCartStore } from '../../stores'
+  import { Button } from 'irelander-ui-components'
 
-const cartStore = useCartStore();
-const { cartList } = storeToRefs(cartStore)
+  const cartStore = useCartStore();
+  const { cartList } = storeToRefs(cartStore)
 
-const totalPrice = computed(() => {
-  return cartList.value.reduce((acc, cur) => acc + cur.price, 0);
-});
+  const totalPrice = computed(() => {
+    return cartList.value.reduce((acc, cur) => acc + cur.price, 0);
+  });
 
-function formatPrice(val: number) {
-  return val.toLocaleString('ko-KR');
-}
+  function formatPrice(val: number) {
+    return val.toLocaleString('ko-KR');
+  }
 
 </script>
 
@@ -20,9 +21,7 @@ function formatPrice(val: number) {
   <div class="container mx-auto px-4 py-8">
     <div class="flex flex-col md:flex-row md:justify-between md:items-center">
       <h1 class="text-2xl font-bold my-4">장바구니</h1>
-      <button class="bg-indigo-500 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded">
-        구매
-      </button>
+      <Button design='primary'>구매</Button>
     </div>
     <div class="mt-8">
       <div v-if='cartList.length > 0' v-for='cart in cartList' :key='cart.id'
@@ -40,9 +39,9 @@ function formatPrice(val: number) {
           </div>
         </div>
         <div>
-          <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" @click='cartStore.removeCart(cart)'>
+          <Button design='danger' @click='cartStore.removeCart(cart)'>
             삭제
-          </button>
+          </Button>
         </div>
       </div>
     </div>

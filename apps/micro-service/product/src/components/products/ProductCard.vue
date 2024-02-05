@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { defineProps } from 'vue'
   import { useCartStore } from 'cart-mfe/Store';
+  import { Button } from 'irelander-ui-components/src/components';
   
   interface Product {
     id: number;
@@ -39,12 +40,7 @@
       <p class="text-gray-500 mb-4">{{ product.description }}</p>
       <div class="flex items-center justify-between">
         <span class="text-lg font-bold">{{ formatPrice(product.price) }}원</span>
-        <button 
-          @click='addToCart(product)'
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2"
-        >
-          담기
-        </button>
+        <Button @click='addToCart(product)'>담기</Button>
       </div>
     </div>
   </div>

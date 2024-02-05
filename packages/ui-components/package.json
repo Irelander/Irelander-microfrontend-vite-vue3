@@ -1,8 +1,9 @@
 {
-  "name": "ui-components",
+  "name": "irelander-ui-components",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.4",
   "type": "module",
+  "main": "./src/components/index.ts",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc && vite build",

@@ -34,6 +34,10 @@ const router = createRouter({
         const { ProductPage } = (await import('product-mfe/Pages')).default;
         return ProductPage;
       },
+      /**
+       * Dynamic Import를 사용하지 않은경우, 호스트 어플리케이션의 로딩과 동시에 아래 모듈을 불러온다.
+       */
+      // component: ProductPage
     }
   ]
 });
