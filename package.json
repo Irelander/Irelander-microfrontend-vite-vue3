@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --stream -r run dev",
+    "dev": "pnpm --stream --parallel run dev",
+    "dev:remote": "pnpm --parallel --filter=!main-app --filter=!irelander-ui-components run dev",
     "dev:host": "pnpm serve-main & pnpm preview-mfe",
-    "serve-main": "pnpm --parallel --filter=main-app run dev",
-    "preview-mfe": "pnpm --parallel --filter=!main-app --filter=!ui-components run dev:host",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve-main": "pnpm --filter=main-app run dev",
+    "preview-mfe": "pnpm --parallel --filter=!main-app --filter=!irelander-ui-components run dev:host",
     "stop": "kill-port --port 5000,5001,5002,5003"
   },
   "keywords": [],
