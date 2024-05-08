@@ -1,6 +1,6 @@
 <script setup lang="ts">
   import { defineProps } from 'vue'
-  import { useCartStore } from 'cart-mfe/Store';
+  import { useCartStore } from 'cafe-mfe/Store';
   import { Button } from 'irelander-ui-components/src/components';
   
   interface Product {
