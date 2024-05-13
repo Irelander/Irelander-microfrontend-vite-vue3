@@ -27,7 +27,7 @@
 </script>
 
 <template>
-  <div class="rounded-lg border bg-card text-card-foreground h-full shadow-lg" data-v0-t="card">
+  <div class="rounded-lg border bg-card text-card-foreground h-full shadow-lg">
     <div class="p-6">
       <img
         :src=product.image

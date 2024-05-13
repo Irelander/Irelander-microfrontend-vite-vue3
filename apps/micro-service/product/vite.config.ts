@@ -9,7 +9,7 @@ export default defineConfig({
     federation({
       filename: "product-mfe-entry.js",
       name: "product-mfe",
-      shared: ["vue", "vue-router", "pinia"],
+      shared: ["vue", "vue-router", "pinia", "lodash"],
       exposes: {
         "./Pages": "./src/pages/index.ts",
       },

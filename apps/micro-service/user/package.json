@@ -9,12 +9,14 @@
     "preview": "vite preview --strictPort"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "pinia": "^2.1.7",
     "utils": "workspace:^",
     "vue": "^3.3.11",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
+    "@types/lodash": "^4.17.1",
     "@vitejs/plugin-vue": "^4.5.2",
     "typescript": "^5.2.2",
     "vite": "^5.0.8",

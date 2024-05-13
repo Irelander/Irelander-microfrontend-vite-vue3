@@ -1,5 +1,11 @@
 <script setup lang="ts">
   import ProductCard from './ProductCard.vue'
+  import lodash from 'lodash';
+
+  // 리모트 어플리케이션간의 공유 의존성 선언 후 해당 패키지에 변형을 시도 했을경우 사이드 이펙트가 있는지 여부를 알아보기 위한 코드 입니다.
+  // user-mfe에 lodash가 사용되고 해당 프로젝트에서 lodash의 map 함수를 빈 배열을 리턴하는 재정의하는 코드가 존재합니다. 
+  // user-mfe가 먼저 로드되므로 아래의 콘솔에서 변경된 값이 출력되는지 여부를 확인해서 서로다른 프로젝트에서 공유 의존성 패키지의 변형이 영향을 주는지 파악하려는 코드입니다.
+  console.log(lodash.map, 'product-mfe')
 
   const products = [{
     id: 1,
